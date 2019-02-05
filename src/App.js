@@ -1,34 +1,30 @@
-import React, { Component } from 'react';
-import Messages from './components/Messages';
+import React from 'react';
+import MessageCard from './components/MessageCard';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import './App.css'
 
-class App extends Component {
-  state = {
-    messages: [
-    {
-      id: 1,
-      tite: 'Lebron is trash'
-    },
-    {
-      id: 2,
-      tite: 'And so are the Lakers'
-    },
-    {
-      id: 3,
-      tite: 'Not as bad as the Cowboys though...'
-    }
-    ]
-  }
 
-  render() {
-    console.log(this.state.messages)
+function App() {
     return (
       <div className="App">
-        <h1>Sean App</h1>
-        <Messages />
+        <Header />
+        <MessageCard message={{
+          title: "Trip To New York", 
+          imgUrl: "https://i.imgur.com/GaebM2U.jpg", 
+          desc: "This one one of his top destinations to visit.",
+          author: "Scott Wilson"}}
+        />
+        <MessageCard message={{
+          title: "Trip To Hong Kong, China", 
+          imgUrl: "https://i.imgur.com/e2i1NPn.jpg", 
+          desc: "This one one of his top destinations to visit.",
+          author: "Scott Wilson"}}
+        />
+        <Footer />
       </div>
     );
   }
-}
+
 
 export default App;
